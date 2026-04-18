@@ -20,3 +20,8 @@ jobs:
               run: mvn test
             - name: create the package
               run: mvn clean package
+            - name: publish the test results
+              uses: EnricoMi/publish-unit-test-result-action@v2
+              with:
+                files: "**/target/surefire-reports/**/*.xml"
+                comment_mode: always

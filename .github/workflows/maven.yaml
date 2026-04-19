@@ -6,7 +6,7 @@ on:
 
 jobs:
     build:
-        uses: shaik2025/springbootexample-mar26/.github/workflows/java_maven_build.yaml@main
+        uses: shaik2025/springbootexample-mar26/.github/workflows/maven.yaml@main
         with:
             java_version: '21'
             maven_command: 'package'       

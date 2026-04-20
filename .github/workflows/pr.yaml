@@ -1,32 +1,3 @@
-<<<<<<< HEAD
-=======
-# This workflow will execute on pull request to dev branch
-
-# name: pr-workflow
-
-# on:
-#     pull_request:
-#         branches:
-#           - dev
-
-# jobs:
-#     build:
-#         runs-on: ubuntu-latest
-#         steps:
-#             - name: get the code
-#               uses: actions/checkout@v6
-#             - name: compile the code
-#               run: mvn compile
-#             - name: test the code
-#               run: mvn test
-#             - name: create the package
-#               run: mvn clean package
-#             - name: publish the test results
-#               uses: EnricoMi/publish-unit-test-result-action@v2
-#               with:
-#                 files: "**/target/surefire-reports/**/*.xml"
-#                 comment_mode: always
->>>>>>> main
 ---
 name: dev-branch
 
@@ -83,10 +54,30 @@ jobs:
               uses: docker/build-push-action@v7
               with:
                 push: false
-<<<<<<< HEAD
-                tags: "shaik2025/springbootexample-mar26:latest"
-=======
-                tags: "shaik2025/springpetclinic:latest"      
-                
+                tags: "shaik2025/springbootexample-mar26:latest"      
+# This workflow will execute on pull request to dev branch
 
->>>>>>> main
+# name: pr-workflow
+
+# on:
+#     pull_request:
+#         branches:
+#           - dev
+
+# jobs:
+#     build:
+#         runs-on: ubuntu-latest
+#         steps:
+#             - name: get the code
+#               uses: actions/checkout@v6
+#             - name: compile the code
+#               run: mvn compile
+#             - name: test the code
+#               run: mvn test
+#             - name: create the package
+#               run: mvn clean package
+#             - name: publish the test results
+#               uses: EnricoMi/publish-unit-test-result-action@v2
+#               with:
+#                 files: "**/target/surefire-reports/**/*.xml"
+#                 comment_mode: always      

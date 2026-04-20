@@ -74,4 +74,4 @@ jobs:
               uses: docker/build-push-action@v7
               with:
                 push: false
-                tags: "cicdprojects/springpetclinic:latest"
+                tags: "shaik2025/springpetclinic:latest"

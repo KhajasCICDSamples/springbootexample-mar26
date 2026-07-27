@@ -1,20 +1,37 @@
 pipeline {
     agent any
+
     tools {
-        maven 'Maven-3.9.16' 
+        maven 'Maven-3.9.16'
     }
+
+    parameters {
+        string(
+            name: 'BRANCH',
+            defaultValue: 'main',
+            description: 'Git Branch'
+        )
+
+        string(
+            name: 'BUILD_COMMAND',
+            defaultValue: 'validate',
+            description: 'Maven command (validate, compile, test, package, install)'
+        )
+    }
+
     stages {
         stage('SCM') {
             steps {
                 git url: 'https://github.com/spring-projects/spring-petclinic.git',
-                branch:'main' 
+                    branch: params.BRANCH
             }
         }
-       stage ('Build'){
-           steps{
-               sh 'mvn --version'
-               sh 'mvn validate'
-           }
-       }
+
+        stage('Build') {
+            steps {
+                sh 'mvn --version'
+                sh "mvn ${params.BUILD_COMMAND}"
+            }
+        }
     }
 }

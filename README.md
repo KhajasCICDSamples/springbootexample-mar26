@@ -95,7 +95,7 @@ At development time we recommend you use the test applications set up as `main()
 
 There is a `petclinic.css` in `src/main/resources/static/resources/css`. It was generated from the `petclinic.scss` source, combined with the [Bootstrap](https://getbootstrap.com/) library. If you make changes to the `scss`, or upgrade Bootstrap, you will need to re-compile the CSS resources using the Maven profile "css", i.e. `./mvnw package -P css`. There is no build profile for Gradle to compile the CSS.
 
-## Working with Petclinic in your IDE
+## Working with Petclinic in your IDE------
 
 ### Prerequisites
 
